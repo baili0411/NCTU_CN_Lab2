@@ -19,7 +19,7 @@ In this lab, we are going to write a Python program which can generate a network
 To execute the program, run 
 
 ```
-/Network_Topology/src/topology.py
+Network_Topology/src/topology.py
 ```
 This will create and start the network.  
 After pinging all the hosts, mininet enters CLI mode.  
