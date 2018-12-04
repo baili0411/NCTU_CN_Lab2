@@ -117,12 +117,36 @@ iperf -c 10.0.0.2 -u -i 1 means that we run iPerf as a client and connect to 10.
 > * Describe how you finish this work step-by-step in detail
 
 1. **Environment Setup**
-    #### Set up GitHub repository
-    >Join the GitHub classroom, and a repository is created for us.  
-    >Mine is at https://github.com/nctucn/lab2-baili0411  
-    >We can then clone the project from this repository, and push to this repository.
-    #### Login to the container using SSH
-    >
+    * Set up GitHub repository
+        * Join the GitHub classroom, and a repository is created for us.  
+        * Mine is at https://github.com/nctucn/lab2-baili0411  
+        * We can then clone the project from this repository, and push to this repository.
+    * Login to the container using SSH
+        * There is a container set up for us, with Mininet and iPerf installed.  
+        * Connect using PieTTY using the IP and port number given in the slide. (IP: 140.1131.95.69, Port:61620) 
+        * Login to root. (I didn't change the password of the root account, still using default)
+    * Clone the GitHub repository
+        ```
+        git clone https://github.com/nctucn/lab2-baili0411.git
+        ```
+        * Network_Topology clones the repository in to a folder called Network_Topology  
+        ```
+        git config --global user.name "Baili Deng"  
+        git config --global user.email rayman0411@gmail.com
+        ```  
+        * Since this is the first time we use this container for git, also set up config for name and email.  
+        * Proper Git usage means that I should also create a branch to work on, then merge back to master, but I forgot.
+    * Run Mininet for testing
+        ```
+        mn
+        ``` 
+        * Error message
+        ```  
+        service openvswitch-switch start  
+        mn
+        ```  
+        * Mininet works.  
+
 
 
 2. **Example of Mininet**
