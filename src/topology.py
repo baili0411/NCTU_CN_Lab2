@@ -57,7 +57,7 @@ def Test():
 	print "Dumping switch connections"
 	dumpNodeConnections(net.switches)
 	print "Testing network connectivity"
-	net.pingALL()
+	net.pingAll()
 	#Don't stop, enter CLI mode
 	CLI(net)
 	
