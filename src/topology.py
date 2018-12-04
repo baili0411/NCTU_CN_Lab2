@@ -6,6 +6,8 @@ from mininet.net import Mininet
 from mininet.util import dumpNodeConnections
 from mininet.log import setLogLevel
 from mininet.cli import CLI
+from mininet.link import TCLink
+
 
 #Used syntax based on recommended syntax in Introduction to Mininet GitHub Page
 
@@ -45,8 +47,8 @@ class Topo0 (Topo):
 def Test():
 	# Create topology based on topo0.png
 	topo = Topo0()
-	# Create network
-	net = Mininet(topo)
+	# Create network, need to set TCLink as link to set loss
+	net = Mininet(topo=topo,link = TCLink)
 	# Start network
 	net.start()
 	#Dump every hosts' and switches' connections
