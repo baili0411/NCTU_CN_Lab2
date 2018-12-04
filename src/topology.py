@@ -19,7 +19,7 @@ class Topo0 (Topo):
 		host = []
 		#Create hosts h1~h6
 		for i in range(6):
-			host.append(self.addHost('i%s'%(i+1)))
+			host.append(self.addHost('h%s'%(i+1)))
 		#Create switches s1~s9
 		for i in range(9):
 			switch.append(self.addSwitch('s%s'%(i+1)))
