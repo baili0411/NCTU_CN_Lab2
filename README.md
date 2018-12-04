@@ -29,8 +29,64 @@ The result is shown in the following picture.
 
 ### Mininet API in Python
 
-> TODO:
-> * Describe the meaning of Mininet API in Python you used in detail
+>`from mininet.topo import Topo`  
+>`from mininet.net import Mininet`    
+>`from mininet.util import dumpNodeConnections`  
+>`from mininet.log import setLogLevel`  
+>`from mininet.cli import CLI`  
+>`from mininet.link import TCLink`  
+
+Importing the required libraries from the Mininet API.
+
+>`setLogLevel('info')`
+
+Set Mininet's default output level. We use info since it provides useful information
+
+>`class Topo0 (Topo):`  
+>`def build(self):`  
+>`...`
+
+Topo 0 inherits from Mininet's Topo class, and override the build() function to define our own build function.
+
+>`self.addHost('h%s'%(i+1))`
+
+Create a host in the topology, using the string in the brackets as the name.  
+'h%s'%(i+1) is Python's string formating, substituting %s with i+1
+
+>`self.addSwitch('s%s'%(i+1)`
+
+Create a switch in the topology, using the string in the brackets as the name.  
+'s%s'%(i+1) is Python's string formating, substituting %s with i+1
+
+>`self.addLink( host[0], switch[0], bw=10, delay = '50us', loss = 12)`
+
+Create a bidirectional link in the topology.  
+The first two parameters are the two nodes we want to link together.  
+The bw parameter is an integer that represents the bandwidth in Mbps.  
+The delay paramter is a string that represents the delay with units.
+The loss paramter is an integer that represents the loss percentage.
+
+>`Mininet(topo=topo,link = TCLink)`
+
+Create a Mininet network emulation object, using the topology defined in object "topo".  
+The link type is set to TCLink to allow the limitations set in addLink().
+
+>`net.start()`
+
+Start the "net" network emulation.
+
+>`dumpNodeConnections(net.hosts)`
+>`dumpNodeConnections(net.switches)`
+
+Dump the connections from the nodes specified in the brackets.
+
+>`net.pingAll()`
+
+Test connectivity by having all the nodes ping each other.
+
+>`CLI(net)`
+
+Invoke Mininet's CLI(command line interface) mode, with the network emulation being "net".
 
 ### iPerf Commands
 
