@@ -19,7 +19,11 @@ In this lab, we are going to write a Python program which can generate a network
 To execute the program, run 
 >`/Network_Topology/src/topology.py`
 
-This will create and start the network. After pinging all the hosts, mininet enters CLI mode.
+This will create and start the network. 
+(0616020) % 3 is 0.
+The created network is based on topo0.png.
+
+After pinging all the hosts, mininet enters CLI mode.
 We can then execute the iPerf command.
 The result is shown in the following picture.
 ![The result after running iPerf](iPerf_result.png)
@@ -90,8 +94,18 @@ Invoke Mininet's CLI(command line interface) mode, with the network emulation be
 
 ### iPerf Commands
 
-> TODO:
-> * Describe the meaning of iPerf command you used in detail
+>`h2 iperf -s -u -i 1 > ./out/result &`
+
+Run iPerf on h2 with arguments -s -u -i 1, then write the output to file /Network_Topology/out/result instead of stdout(the terminal)( > ./out/result ).  
+The & at the end means that iperf will run in the background.  
+iperf -s -u -i 1 means that we run iPerf in server mode( -s ), the connection type is UDP( -u ), and a report about the bandwidth, jitter, and loss is made every second( -i 1 ).  
+
+>`h6 iperf -c 10.0.0.2 -u –i 1`  
+
+Run iPerf on h6 with arguments -c 10.0.0.2 -u -i 1.  
+This one isn't executed in the background, and the output we see in the terminal is this part.  
+iperf -c 10.0.0.2 -u -i 1 means that we run iPerf as a client and connect to 10.0.0.2( -c 10.0.0.2 ), using UDP ( -u ), and a report about the bandwidth, jitter, and loss is made every second( -i 1 ).  
+
 
 ### Tasks
 
@@ -112,35 +126,19 @@ Invoke Mininet's CLI(command line interface) mode, with the network emulation be
 ---
 ## References
 
-> TODO: 
-> * Please add your references in the following
 
 * **Mininet**
     * [Mininet Walkthrough](http://mininet.org/walkthrough/)
     * [Introduction to Mininet](https://github.com/mininet/mininet/wiki/Introduction-to-Mininet)
     * [Mininet Python API Reference Manual](http://mininet.org/api/annotated.html)
-    * [A Beginner's Guide to Mininet](https://opensourceforu.com/2017/04/beginners-guide-mininet/)
-    * [GitHub/OSE-Lab - 熟悉如何使用 Mininet](https://github.com/OSE-Lab/Learning-SDN/blob/master/Mininet/README.md)
-    * [菸酒生的記事本 – Mininet 筆記](https://blog.laszlo.tw/?p=81)
-    * [Hwchiu Learning Note – 手把手打造仿 mininet 網路](https://hwchiu.com/setup-mininet-like-environment.html)
-    * [阿寬的實驗室 – Mininet 指令介紹](https://ting-kuan.blog/2017/11/09/%E3%80%90mininet%E6%8C%87%E4%BB%A4%E4%BB%8B%E7%B4%B9%E3%80%91/)
-    * [Mininet 學習指南](https://www.sdnlab.com/11495.html)
-* **Python**
-    * [Python 2.7.15 Standard Library](https://docs.python.org/2/library/index.html)
-    * [Python Tutorial - Tutorialspoint](https://www.tutorialspoint.com/python/)
 * **Others**
     * [iPerf3 User Documentation](https://iperf.fr/iperf-doc.php#3doc)
     * [Cheat Sheet of Markdown Syntax](https://www.markdownguide.org/cheat-sheet)
-    * [Vim Tutorial – Tutorialspoint](https://www.tutorialspoint.com/vim/index.htm)
-    * [鳥哥的 Linux 私房菜 – 第九章、vim 程式編輯器](http://linux.vbird.org/linux_basic/0310vi.php)
 
 ---
 ## Contributors
 
-> TODO:
-> * Please replace "YOUR_NAME" and "YOUR_GITHUB_LINK" into yours
-
-* [YOUR_NAME](YOUR_GITHUB_LINK)
+* [Baili Deng](https://github.com/baili0411)
 * [David Lu](https://github.com/yungshenglu)
 
 ---
