@@ -58,9 +58,10 @@ def Test():
 	dumpNodeConnections(net.switches)
 	print "Testing network connectivity"
 	net.pingAll()
-	#Don't stop, enter CLI mode
+	#Enter CLI mode
 	CLI(net)
-	
+	#Stop after exiting CLI to properly stop the switches and hosts
+	net.stop()	
 #Main
 
 if __name__ == '__main__':
