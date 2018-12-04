@@ -16,9 +16,13 @@ In this lab, we are going to write a Python program which can generate a network
 ---
 ## Execution
 
-> TODO: 
-> * Describe how to execute your program
-> * Show the screenshot of using iPerf command in Mininet
+To execute the program, run 
+>`/Network_Topology/src/topology.py`
+
+This will create and start the network. After pinging all the hosts, mininet enters CLI mode.
+We can then execute the iPerf command.
+The result is shown in the following picture.
+![The result after running iPerf](iPerf_result.png)
 
 ---
 ## Description
