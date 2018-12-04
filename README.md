@@ -110,9 +110,6 @@ iperf -c 10.0.0.2 -u -i 1 means that we run iPerf as a client and connect to 10.
 
 ### Tasks
 
-> TODO:
-> * Describe how you finish this work step-by-step in detail
-
 1. **Environment Setup**
     1. Set up GitHub repository
         * Join the GitHub classroom, and a repository is created for us.  
